@@ -1,0 +1,5 @@
+SELECT first_name, last_name
+FROM cops
+JOIN timesheet
+ON cops.badge_number = timesheet.badge_number
+WHERE checkin_time < 2201 AND checkout_time > 2201 AND guns_issued = 1 AND security_level = 3
