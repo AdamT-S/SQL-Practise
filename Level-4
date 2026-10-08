@@ -1,0 +1,5 @@
+SELECT id, first_name, last_name
+FROM attendees
+JOIN bureaucon, dumbcon
+ON attendees.id = bureaucon.attendee_id AND attendees.id = dumbcon.attendee_id
+WHERE bureaucon.forms_brought = 8 AND dumbcon.dumbs_brought = 11
