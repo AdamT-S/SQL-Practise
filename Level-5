@@ -1,0 +1,10 @@
+SELECT first_name, last_name, customers.order_number, sum(orders.price) AS bill_total, tips.dollars_tipped
+FROM customers
+JOIN orders, tips
+ON customers.order_number = orders.order_number AND orders.order_number = tips.order_number
+GROUP BY customers.first_name, customers.last_name, customers.order_number, tips.dollars_tipped;
+
+SELECT first_name, last_name, MIN(dollars_tipped / bill_total) As Perp
+FROM result_2
+GROUP BY first_name, last_name
+ORDER BY Perp ASC;
