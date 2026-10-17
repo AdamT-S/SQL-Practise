@@ -1,0 +1,27 @@
+Select *
+from web_searches
+where date_visited = 19980624 and search_history = 'rateyourdictator.gov;
+
+select *
+from web_searches
+where ip_address = '10.238.47.145'
+order by search_history ASC;
+
+select *
+from stars
+where (q1 = 'Falaffel' or q1= 'Carrots' or q1 = 'Hummus') and (q2 = 'Banana Milk' or q2= 'Inconsiderate People');
+
+Select reviews_ribbit78.title, 
+movies.director, movies.rating, reviews_ribbit78.rating
+from movies
+join reviews_ribbit78
+on movies.title = reviews_ribbit78.title
+where reviews_ribbit78.rating = 10 and movies.director in (select director from movies
+Group by movies.director
+HAving max(movies.rating) < 8.5);
+
+select *
+from nutrition_facts
+join order_74b8s
+on nutrition_facts.item_name = order_74b8s.item_name
+where nutrient = 'bioflavenoids'
