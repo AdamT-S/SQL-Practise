@@ -1,0 +1,7 @@
+Select *
+from damage_log
+where character_damaged = 'xCalibur32'
+
+Select *
+from damage_log
+where time > 1330 and time < 1351
